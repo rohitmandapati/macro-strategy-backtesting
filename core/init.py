@@ -1,5 +1,10 @@
-import data_loader as dl
+import data_loader
 
-dl.get_stock_data("AAPL")
-dl.get_stock_data("SPY")
+# Loads stocks
+# data_loader.get_stock_data("AAPL")
+# data_loader.get_stock_data("SPY")
 
+df_aapl = data_loader.load_stock_data("AAPL")
+df_spy = data_loader.load_stock_data("SPY")
+
+print(df_aapl.head())
