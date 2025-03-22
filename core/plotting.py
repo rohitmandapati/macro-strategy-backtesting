@@ -22,3 +22,13 @@ def plot_returns(df, ticker):
     plt.tight_layout()
     plt.show()
 
+# Plots price data of a ticker
+def plot_strategy_returns(df, strategy:str):
+    plt.figure(figsize=(12, 5))
+    plt.plot(df["Date"], df["Strategy_Returns"])
+    plt.title(f"{ticker} Strategy Returns")
+    plt.xlabel("Date")
+    plt.ylabel("Price (USD)")
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
