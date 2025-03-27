@@ -6,7 +6,7 @@ import core.utils as utils
 path = "data"
 
 # Saves data of specified ticker into csv file
-def get_stock_data(ticker: str, start:str ="2018-01-01", end:str="2024-12-31") -> str:
+def get_stock_data(ticker: str, start:str ="2007-01-01", end:str="2024-12-31") -> str:
     data = yf.download(ticker, start, end, auto_adjust=True)
     filename = f"{path}/{ticker.lower()}.csv"
     data.to_csv(filename)

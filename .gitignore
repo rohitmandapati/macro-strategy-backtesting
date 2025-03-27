@@ -1,3 +1,4 @@
 # Python
 .venv/
+.env
 core/__pycache__/

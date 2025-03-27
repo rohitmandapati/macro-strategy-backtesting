@@ -11,13 +11,7 @@ def moving_average_crossover(df:pd.DataFrame, short_window=20, long_window=50) -
     
     df["Signal"] = 0
     for i in range(short_window, len(df)):
-        df["Signal"][i] = (
-            df["SMA Short"][i] > df["SMA Long"][i]
-        ).astype(int)
-    df = compute_strategy_returns(df)
+        df.loc[df.index[i], "Signal"] = int(df["SMA Short"][i] > df["SMA Long"][i])
+    print(df.head(200))
     return df
 
-def compute_strategy_returns(df): 
-    df = df.copy()
-    df["Strategy_Returns"] = df["Returns"] * df["Signal"]
-    return df
